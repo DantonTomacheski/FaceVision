@@ -1,0 +1,115 @@
+# Desenvolvimento de Aplicação Web com Reconhecimento Facial usando Vite, TypeScript, TensorFlow.js, Tailwind CSS e Zustand
+
+## Visão Geral do Projeto
+Desenvolva uma aplicação web de reconhecimento facial com interface moderna e responsiva, utilizando exclusivamente TensorFlow.js para todas as funcionalidades de ML. A aplicação deverá permitir:
+- Detecção e rastreamento de rostos em tempo real via webcam
+- Identificação de pontos faciais (landmarks)
+- Análise de expressões faciais
+- Gerenciamento de estado eficiente com Zustand
+
+## Stack Tecnológica
+- **Frontend**: Vite + TypeScript + React
+- **Estilização**: Tailwind CSS
+- **Gerenciamento de Estado**: Zustand
+- **Reconhecimento Facial**: TensorFlow.js com modelos BlazeFace e FaceMesh
+- **Empacotamento**: Vite build
+
+## Requisitos Funcionais
+1. Captura de vídeo da webcam em tempo real
+2. Detecção e rastreamento de múltiplos rostos usando TensorFlow.js
+3. Identificação de pontos faciais utilizando o modelo FaceMesh do TensorFlow.js
+4. Análise de expressões faciais utilizando modelos de classificação do TensorFlow.js
+5. Visualização gráfica dos pontos faciais no rosto detectado
+6. Interface responsiva que funcione em diversos dispositivos
+
+## Etapas de Desenvolvimento
+
+### 1. Configuração Inicial
+- Criar um novo projeto usando Vite com template TypeScript + React
+- Configurar Tailwind CSS no projeto
+- Instalar e configurar Zustand para gerenciamento de estado
+- Configurar ESLint e Prettier para padronização de código
+- Criar estrutura base de diretórios do projeto
+
+### 2. Integração do TensorFlow.js
+- Instalar TensorFlow.js e suas dependências
+- Configurar carregamento otimizado dos modelos
+- Implementar utilização de WebGL para aceleração por GPU
+- Configurar fallback para CPU quando GPU não estiver disponível
+
+### 3. Configuração da Webcam
+- Implementar componente de acesso à webcam usando a API MediaDevices
+- Integrar o fluxo de vídeo com TensorFlow.js
+- Implementar tratamento de permissões e fallbacks
+- Criar lógica de exibição do stream de vídeo na interface
+
+### 4. Implementação de Detecção Facial com BlazeFace
+- Integrar modelo BlazeFace do TensorFlow.js para detecção rápida de rostos
+- Implementar sistema de rastreamento para melhorar performance
+- Criar abstrações para facilitar o uso da API do TensorFlow.js
+
+### 5. Implementação de Landmarks Faciais com FaceMesh
+- Integrar modelo FaceMesh do TensorFlow.js
+- Extrair e processar os 468 pontos faciais
+- Implementar lógica para cálculo de distâncias e proporções faciais
+- Criar sistema de normalização para diferentes tamanhos e posições de rosto
+
+### 6. Gerenciamento de Estado com Zustand
+- Definir stores para:
+  - Estado da webcam (ativa/inativa, permissões)
+  - Detecções faciais em andamento
+  - Landmarks e características detectadas
+  - Configurações de modelos TensorFlow.js
+  - Performance e estatísticas de processamento
+
+### 7. Implementação de Classificação de Expressões
+- Integrar ou treinar modelo de classificação de expressões no TensorFlow.js
+- Processar landmarks faciais para extrair características relevantes
+- Implementar sistema de classificação de emoções básicas
+- Criar visualização de confiança das previsões
+
+### 8. Visualização de Dados Faciais
+- Desenvolver canvas overlay para renderização de landmarks
+- Implementar visualização de malha facial 3D
+- Criar componentes para exibição de métricas e expressões
+- Otimizar renderização para manter framerate estável
+
+### 9. Interface do Usuário com Tailwind CSS
+- Desenvolver layout responsivo utilizando Tailwind CSS
+- Implementar tema claro/escuro
+- Criar componentes para controles de ajuste de sensibilidade e configurações
+- Otimizar interface para desktop e dispositivos móveis
+
+### 10. Otimização de Performance
+- Implementar estratégias de throttling para processamento de frames
+- Utilizar Web Workers para processamento em thread separado
+- Implementar técnicas de caching de previsões
+- Otimizar tamanho de entrada para os modelos
+
+### 11. Testes e Depuração
+- Escrever testes unitários para componentes React
+- Implementar testes de integração para o pipeline TensorFlow.js
+- Criar ferramentas de depuração visual para modelos
+- Adicionar sistema abrangente de logging e tratamento de erros
+
+### 12. Otimização e Preparação para Produção
+- Configurar quantização de modelos TensorFlow.js para redução de tamanho
+- Implementar carregamento progressivo dos modelos
+- Otimizar build com Vite para produção
+- Adicionar compressão de assets e estratégias de cache
+- Implementar sistema de fallback para dispositivos de baixa performance
+
+### 13. Documentação
+- Documentar a integração com TensorFlow.js
+- Criar guia de instalação e uso
+- Documentar parâmetros e thresholds dos modelos
+- Incluir troubleshooting para problemas comuns com TensorFlow.js em browsers
+
+## Considerações para Produção
+- Implementar PWA para funcionamento offline após carregamento inicial dos modelos
+- Adicionar analytics para monitoramento de uso e performance dos modelos
+- Configurar CI/CD para deploy automático
+- Implementar monitoramento de erros específicos para TensorFlow.js
+- Otimizar para SEO
+
+Este guia fornece uma estrutura abrangente para o desenvolvimento de uma aplicação web de reconhecimento facial utilizando exclusivamente TensorFlow.js para as funcionalidades de ML, integrado com Vite, TypeScript, Tailwind CSS e Zustand. O engenheiro deve seguir estas etapas sequencialmente, garantindo que cada componente seja testado adequadamente antes de avançar para o próximo estágio de desenvolvimento.
