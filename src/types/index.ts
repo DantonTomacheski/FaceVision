@@ -57,6 +57,9 @@ export interface LivenessState {
     smileDetected: boolean;
     prevEyeOpenness?: number; // Track previous eye openness for blink detection
     prevFaceOrientation?: number; // Track previous face orientation for turn detection
+    eyesRecentlyClosed?: boolean; // Track if eyes were recently closed (for complete blink cycle detection)
+    blinkInProgress?: boolean; // Track if a blink is currently in progress
+    blinkStartTime?: number; // When the blink started (for timing measurements)
   };
 }
 
